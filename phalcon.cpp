@@ -23,6 +23,9 @@ extern "C" {
 
 		static Php::Extension extension("Phalcon++", "0.0.1");
 
+		Php::Ini ini("phalcon.debug.enable_debug", false);
+		extension.add(std::move(ini));
+
 		/**
 		 * Define Phalcon namespace
 		 */
