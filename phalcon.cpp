@@ -43,8 +43,7 @@ extern "C" {
 		phalconNamespace.add(std::move(config));
 
 		/* Class Phalcon\Loader */
-		Php::Class<Phalcon::Loader> loader("Loader");
-		loader.extends(injectable);
+		Php::Class<Phalcon::Loader> loader("Loader", injectable);
 		phalconNamespace.add(std::move(loader));
 
 		/* Interface Phalcon\DiInterface */
@@ -52,8 +51,7 @@ extern "C" {
 		phalconNamespace.add(std::move(diInterface));
 
 		/* Class Phalcon\Di */
-		Php::Class<Phalcon::Di> di("Di");
-		di.implements(std::move(diInterface));
+		Php::Class<Phalcon::Di> di("Di", diInterface);
 		phalconNamespace.add(std::move(di));
 
 		/* Interface Phalcon\DiInterface */
@@ -61,8 +59,7 @@ extern "C" {
 		phalconNamespace.add(std::move(dispatcherInterface));
 
 		/* Class Phalcon\Dispatcher */
-		Php::Class<Phalcon::Dispatcher> dispatcher("Dispatcher");
-		dispatcher.implements(std::move(dispatcherInterface));
+		Php::Class<Phalcon::Dispatcher> dispatcher("Dispatcher", dispatcherInterface);
 		phalconNamespace.add(std::move(dispatcher));
 
 		/* Class Phalcon\Db */
@@ -75,8 +72,7 @@ extern "C" {
 		diNamespace.add(std::move(diServiceInterface));
 
 		/* Class Phalcon\Di\Service */
-		Php::Class<Phalcon::Di_Service> di_service("Service");
-		di_service.implements(std::move(diServiceInterface));
+		Php::Class<Phalcon::Di_Service> di_service("Service", diServiceInterface);
 		diNamespace.add(std::move(di_service));
 
 		/* namespace Phalcon\Di */

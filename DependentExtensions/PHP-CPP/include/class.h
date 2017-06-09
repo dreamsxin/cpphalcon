@@ -40,6 +40,23 @@ public:
         T::Init(*this);
     }
 
+    /**
+     *  Interface constructor
+     *  @param  name
+     *  @param  interface
+     *  @param  flags
+     */
+    Class(const char *name, const Interface &interface, int flags = 0) : ClassBase(name, flags) {
+		this->implements(interface);
+        T::Init(*this);
+    }
+
+    /**
+     *  Extends constructor
+     *  @param  name
+     *  @param  base
+     *  @param  flags
+     */
     template<typename CLASS>
     Class(const char *name, const Class<CLASS> &base, int flags = 0) : ClassBase(name, flags) {
 		this->extends(base);
