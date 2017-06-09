@@ -1,7 +1,11 @@
 #include <phpcpp.h>
+
+#include "injectable.h"
 #include "version.h"
 #include "debug.h"
-#include "injectable.h"
+#include "acl.h"
+#include "application.h"
+#include "arr.h"
 #include "config.h"
 #include "loader.h"
 #include "dispatcherinterface.h"
@@ -20,11 +24,13 @@ extern "C" {
 		static Php::Extension extension("Phalcon++", "0.0.1");
 
 		/**
-		 * Define namespace
+		 * Define Phalcon namespace
 		 */
-
 		Php::Namespace phalconNamespace("Phalcon");
-		Php::Namespace diNamespace("Di");
+
+		/* Class Phalcon\Di\Injectable */
+		Php::Class<Phalcon::Injectable> injectable("Injectable", Php::Abstract);
+		phalconNamespace.add(injectable);
 
 		/* Class Phalcon\Version */
 		Php::Class<Phalcon::Version> version("Version");
@@ -34,9 +40,17 @@ extern "C" {
 		Php::Class<Phalcon::Debug> debug("Debug");
 		phalconNamespace.add(std::move(debug));
 
-		/* Class Phalcon\Di\Injectable */
-		Php::Class<Phalcon::Injectable> injectable("Injectable", Php::Abstract);
-		phalconNamespace.add(injectable);
+		/* Class Phalcon\Acl */
+		Php::Class<Phalcon::Acl> acl("Acl", Php::Abstract);
+		phalconNamespace.add(std::move(acl));
+
+		/* Class Phalcon\Application */
+		Php::Class<Phalcon::Application> application("Application", Php::Abstract);
+		phalconNamespace.add(std::move(application));
+
+		/* Class Phalcon\Arr */
+		Php::Class<Phalcon::Arr> arr("Arr");
+		phalconNamespace.add(std::move(arr));
 
 		/* Class Phalcon\Config */
 		Php::Class<Phalcon::Config> config("Config");
@@ -67,6 +81,11 @@ extern "C" {
 
 		phalconNamespace.add(std::move(db));
 
+		/**
+		 * Define Di namespace
+		 */
+		Php::Namespace diNamespace("Di");
+
 		/* Interface Phalcon\Di\ServiceInterface */
 		Phalcon::Di_ServiceInterface diServiceInterface("ServiceInterface");
 		diNamespace.add(std::move(diServiceInterface));
@@ -75,9 +94,7 @@ extern "C" {
 		Php::Class<Phalcon::Di_Service> di_service("Service", diServiceInterface);
 		diNamespace.add(std::move(di_service));
 
-		/* namespace Phalcon\Di */
 		phalconNamespace.add(std::move(diNamespace));
-
 		extension.add(std::move(phalconNamespace));
 		return extension;
 	}

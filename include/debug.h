@@ -17,53 +17,53 @@ namespace Phalcon {
 
 		static void Init(Php::Class<Debug> &debug)
 		{
-			debug.method<&Phalcon::Debug::enable>("enable");
-			debug.method<&Phalcon::Debug::disable>("disable");
+			debug.method<&Debug::enable>("enable");
+			debug.method<&Debug::disable>("disable");
 			/**
 			 * Change the base URI for static resources
 			 */
-			debug.method<&Phalcon::Debug::setUri>("setUri", {
+			debug.method<&Debug::setUri>("setUri", {
 				Php::ByVal("uri", Php::Type::String)
 			});
-			debug.method<&Phalcon::Debug::setShowBackTrace>("setShowBackTrace", {
+			debug.method<&Debug::setShowBackTrace>("setShowBackTrace", {
 				Php::ByVal("showBackTrace", Php::Type::Bool),
 			});
-			debug.method<&Phalcon::Debug::setShowFiles>("setShowFiles", {
+			debug.method<&Debug::setShowFiles>("setShowFiles", {
 				Php::ByVal("showFiles", Php::Type::Bool),
 			});
-			debug.method<&Phalcon::Debug::setShowFileFragment>("setShowFileFragment", {
+			debug.method<&Debug::setShowFileFragment>("setShowFileFragment", {
 				Php::ByVal("showFileFragment", Php::Type::Bool),
 			});
-			debug.method<&Phalcon::Debug::listen>("listen", {
+			debug.method<&Debug::listen>("listen", {
 				Php::ByVal("exceptions", Php::Type::Bool),
 				Php::ByVal("lowSeverity", Php::Type::Bool),
 			});
-			debug.method<&Phalcon::Debug::listenExceptions>("listenExceptions");
-			debug.method<&Phalcon::Debug::listenLowSeverity>("listenLowSeverity");
-			debug.method<&Phalcon::Debug::halt>("halt");
-			debug.method<&Phalcon::Debug::debugVar>("debugVar", {
+			debug.method<&Debug::listenExceptions>("listenExceptions");
+			debug.method<&Debug::listenLowSeverity>("listenLowSeverity");
+			debug.method<&Debug::halt>("halt");
+			debug.method<&Debug::debugVar>("debugVar", {
 				Php::ByVal("varz"),
 				Php::ByVal("key", Php::Type::String),
 			});
-			debug.method<&Phalcon::Debug::debugVar>("clearVars");
-			debug.method<&Phalcon::Debug::getMajorVersion>("getMajorVersion");
-			debug.method<&Phalcon::Debug::getVersion>("getVersion");
-			debug.method<&Phalcon::Debug::getCssSources>("getCssSources");
-			debug.method<&Phalcon::Debug::getJsSources>("getJsSources");
-			debug.method<&Phalcon::Debug::showTraceItem>("showTraceItem", {
+			debug.method<&Debug::debugVar>("clearVars");
+			debug.method<&Debug::getMajorVersion>("getMajorVersion");
+			debug.method<&Debug::getVersion>("getVersion");
+			debug.method<&Debug::getCssSources>("getCssSources");
+			debug.method<&Debug::getJsSources>("getJsSources");
+			debug.method<&Debug::showTraceItem>("showTraceItem", {
 				Php::ByVal("n", Php::Type::Numeric),
 				Php::ByVal("trace", Php::Type::Array),
 			});
-			debug.method<&Phalcon::Debug::onUncaughtLowSeverity>("onUncaughtLowSeverity", {
+			debug.method<&Debug::onUncaughtLowSeverity>("onUncaughtLowSeverity", {
 				Php::ByVal("severity", Php::Type::Numeric),
 				Php::ByVal("message", Php::Type::String),
 				Php::ByVal("file", Php::Type::String),
 				Php::ByVal("line", Php::Type::Numeric),
 			});
-			debug.method<&Phalcon::Debug::onUncaughtException>("onUncaughtException", {
+			debug.method<&Debug::onUncaughtException>("onUncaughtException", {
 				Php::ByVal("exception", "Exception"),
 			});
-			debug.method<&Phalcon::Debug::onUncaughtException>("onUserDefinedError", {
+			debug.method<&Debug::onUncaughtException>("onUserDefinedError", {
 				Php::ByVal("severity", Php::Type::Numeric),
 				Php::ByVal("message", Php::Type::String),
 				Php::ByVal("file", Php::Type::String),

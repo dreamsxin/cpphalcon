@@ -49,14 +49,14 @@ namespace Phalcon {
 			dispatcher.property("_previousHandlerName", nullptr, Php::Protected);
 			dispatcher.property("_previousActionName", nullptr, Php::Protected);
 
-			dispatcher.property("EXCEPTION_NO_DI", Phalcon::Dispatcher::EXCEPTION_NO_DI, Php::Const);
-			dispatcher.property("EXCEPTION_CYCLIC_ROUTING", Phalcon::Dispatcher::EXCEPTION_CYCLIC_ROUTING, Php::Const);
-			dispatcher.property("EXCEPTION_HANDLER_NOT_FOUND", Phalcon::Dispatcher::EXCEPTION_HANDLER_NOT_FOUND, Php::Const);
-			dispatcher.property("EXCEPTION_INVALID_HANDLER", Phalcon::Dispatcher::EXCEPTION_INVALID_HANDLER, Php::Const);
-			dispatcher.property("EXCEPTION_INVALID_PARAMS", Phalcon::Dispatcher::EXCEPTION_INVALID_PARAMS, Php::Const);
-			dispatcher.property("EXCEPTION_ACTION_NOT_FOUND", Phalcon::Dispatcher::EXCEPTION_ACTION_NOT_FOUND, Php::Const);
+			dispatcher.property("EXCEPTION_NO_DI", Dispatcher::EXCEPTION_NO_DI, Php::Const);
+			dispatcher.property("EXCEPTION_CYCLIC_ROUTING", Dispatcher::EXCEPTION_CYCLIC_ROUTING, Php::Const);
+			dispatcher.property("EXCEPTION_HANDLER_NOT_FOUND", Dispatcher::EXCEPTION_HANDLER_NOT_FOUND, Php::Const);
+			dispatcher.property("EXCEPTION_INVALID_HANDLER", Dispatcher::EXCEPTION_INVALID_HANDLER, Php::Const);
+			dispatcher.property("EXCEPTION_INVALID_PARAMS", Dispatcher::EXCEPTION_INVALID_PARAMS, Php::Const);
+			dispatcher.property("EXCEPTION_ACTION_NOT_FOUND", Dispatcher::EXCEPTION_ACTION_NOT_FOUND, Php::Const);
 
-			dispatcher.method<&Phalcon::Dispatcher::__construct>("__construct");
+			dispatcher.method<&Dispatcher::__construct>("__construct");
 		}
 
 		/**

@@ -41,7 +41,7 @@ namespace Phalcon {
 			db.property("FETCH_SERIALIZE", Php::constant("PDO::FETCH_SERIALIZE").numericValue(), Php::Const);
 			db.property("FETCH_PROPS_LATE", Php::constant("PDO::FETCH_PROPS_LATE").numericValue(), Php::Const);
 
-			db.method<&Phalcon::Db::setup>("setup");
+			db.method<&Db::setup>("setup");
 		}
 
 		/**

@@ -47,9 +47,9 @@ namespace Phalcon {
 
 		static void Init(Php::Class<Loader> &loader)
 		{
-			loader.method<&Phalcon::Loader::__construct>("__construct");
-			loader.method<&Phalcon::Loader::_register>("register");
-			loader.method<&Phalcon::Loader::unregister>("unregister");
+			loader.method<&Loader::__construct>("__construct");
+			loader.method<&Loader::_register>("register");
+			loader.method<&Loader::unregister>("unregister");
 		}
 
 		/**

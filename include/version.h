@@ -40,13 +40,13 @@ namespace Phalcon {
 
 		static void Init(Php::Class<Version> &version)
 		{
-			version.property("TYPE_ALPHA", Phalcon::Version::TYPE_ALPHA, Php::Const);
-			version.property("TYPE_BETA", Phalcon::Version::TYPE_BETA, Php::Const);
-			version.property("TYPE_RC", Phalcon::Version::TYPE_RC, Php::Const);
-			version.property("TYPE_STABLE", Phalcon::Version::TYPE_STABLE, Php::Const);
+			version.property("TYPE_ALPHA", Version::TYPE_ALPHA, Php::Const);
+			version.property("TYPE_BETA", Version::TYPE_BETA, Php::Const);
+			version.property("TYPE_RC", Version::TYPE_RC, Php::Const);
+			version.property("TYPE_STABLE", Version::TYPE_STABLE, Php::Const);
 
-			version.method<&Phalcon::Version::get>("get");
-			version.method<&Phalcon::Version::getId>("getId");
+			version.method<&Version::get>("get");
+			version.method<&Version::getId>("getId");
 		}
 
 		/**

@@ -48,17 +48,17 @@ namespace Phalcon {
 
 		static void Init(Php::Class<Di> &di)
 		{
-			di.method<&Phalcon::Di::__construct>("__construct");
-			di.method<&Phalcon::Di::setDefault>("setDefault", {
+			di.method<&Di::__construct>("__construct");
+			di.method<&Di::setDefault>("setDefault", {
 				Php::ByVal("dependencyInjector", "Phalcon\\DiInterface"),
 			});
-			di.method<&Phalcon::Di::getDefault>("getDefault");
-			di.method<&Phalcon::Di::set>("set", {
+			di.method<&Di::getDefault>("getDefault");
+			di.method<&Di::set>("set", {
 				Php::ByVal("name", Php::Type::String, true),
 				Php::ByVal("definition", Php::Type::Null, true),
 				Php::ByVal("shared", Php::Type::Bool, false),
 			});
-			di.method<&Phalcon::Di::set>("get", {
+			di.method<&Di::set>("get", {
 				Php::ByVal("name", Php::Type::String, true),
 				Php::ByVal("parameters", Php::Type::Array, false),
 			});

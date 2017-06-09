@@ -17,11 +17,11 @@ namespace Phalcon {
 
 		static void Init(Php::Class<Config> &config)
 		{
-			config.method<&Phalcon::Config::__construct>("__construct");
-			config.method<&Phalcon::Config::get>("get");
-			config.method<&Phalcon::Config::merge>("merge");
-			config.method<&Phalcon::Config::toArray>("toArray");
-			config.method<&Phalcon::Config::count>("count");
+			config.method<&Config::__construct>("__construct");
+			config.method<&Config::get>("get");
+			config.method<&Config::merge>("merge");
+			config.method<&Config::toArray>("toArray");
+			config.method<&Config::count>("count");
 		}
 
 		/**
